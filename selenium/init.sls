@@ -1,3 +1,6 @@
+include
+  - curl
+
 {%  set filename = 'selenium-server-standalone-' ~ pillar['selenium']['file_version'] ~ '.jar'  %}
 {%  set directory = pillar['selenium']['dir_version']  %}
 
