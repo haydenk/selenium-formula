@@ -1,13 +1,13 @@
-========
-selenium
-========
+===================
+Selenium Standalone
+===================
 
 Formulas to setup the Selenium Standalone JAR file
 
 .. note::
 
     See the full `Salt Formulas installation and usage instructions
-    <>`_.
+    <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
 
 Available states
 ================
@@ -15,8 +15,8 @@ Available states
 .. contents::
     :local:
 
-``apache``
-----------
+``selenium``
+------------
 
 Downloads and Symlinks the Selenium Standalone JAR file
 
