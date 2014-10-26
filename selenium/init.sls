@@ -1,8 +1,10 @@
-include
-  - curl
+{%  set filename = 'selenium-server-standalone-' ~ salt['pillar.get']('selenium:file_version','2.43.1') ~ '.jar'  %}
+{%  set directory = salt['pillar.get']('selenium:dir_version','2.43')  %}
 
-{%  set filename = 'selenium-server-standalone-' ~ pillar['selenium']['file_version'] ~ '.jar'  %}
-{%  set directory = pillar['selenium']['dir_version']  %}
+selenium-deps:
+  pkg.installed:
+    - pkgs:
+      - curl
 
 get-selenium:
   cmd.run:
@@ -12,7 +14,7 @@ get-selenium:
     - name: curl -O http://selenium-release.storage.googleapis.com/{{ directory }}/{{ filename }}
     - unless: test -f /usr/local/bin/{{ filename }}
     - require:
-      - pkg: curl
+      - pkg: selenium-deps
 
 make-selenium-executable:
   cmd.run:
