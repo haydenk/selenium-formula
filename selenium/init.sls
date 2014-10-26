@@ -35,7 +35,7 @@ make-selenium-symbolic-link:
 
 /usr/local/bin/start-selenium:
   file.managed:
-    - source: salt://files/start_selenium_script
+    - source: salt://selenium/start_selenium_script
     - user: root
     - group: root
     - mode: 755
